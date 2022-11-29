@@ -13,13 +13,13 @@ public class InteractionObjects : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            rb.AddForce(Vector3.up * 5,ForceMode.VelocityChange);
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        rb.AddForce(Vector3.up * 5,ForceMode.VelocityChange);
             
-            Debug.Log("Jump");
-        }
-    }
+    //        Debug.Log("Jump");
+    //    }
+    //}
 }

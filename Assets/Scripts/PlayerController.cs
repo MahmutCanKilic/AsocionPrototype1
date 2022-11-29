@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("JumpPad"))
         {
-            rb.AddForce(Vector3.up * 10, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * 15, ForceMode.VelocityChange);
 
             Debug.Log("Jump");
         }
