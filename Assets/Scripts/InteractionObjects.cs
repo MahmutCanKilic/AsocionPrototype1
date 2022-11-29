@@ -5,8 +5,9 @@ using UnityEngine;
 public class InteractionObjects : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject player , red ,yellow, blue;
     Animator anim;
+    //[SerializeField] private GameObject red, yellow, blue;
     // Start is called before the first frame update
     void Start()
     {

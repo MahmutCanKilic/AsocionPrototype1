@@ -584,6 +584,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 608069085}
+  red: {fileID: 1150015431}
+  yellow: {fileID: 1677982946}
+  blue: {fileID: 421555317}
 --- !u!1 &608069085
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +996,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5c6d7b991dcd17e4d9f41a9c54915438,
         type: 3}
       propertyPath: m_Name
-      value: Jumppadgeo2
+      value: JumpPadBlue
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c6d7b991dcd17e4d9f41a9c54915438,
         type: 3}
@@ -1128,7 +1131,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3c6a293eeb995a3459ed172ac73392d9,
         type: 3}
       propertyPath: m_Name
-      value: Jumppadgeo1
+      value: JumpPadRed
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3c6a293eeb995a3459ed172ac73392d9,
         type: 3}
@@ -1189,6 +1192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 608069085}
+  red: {fileID: 1150015431}
+  yellow: {fileID: 1677982946}
+  blue: {fileID: 421555317}
 --- !u!1 &1182854312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,6 +1307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 608069085}
+  red: {fileID: 0}
+  yellow: {fileID: 0}
+  blue: {fileID: 0}
 --- !u!1001 &1323247019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1381,7 +1390,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 911ab5fb3bbe2e743855f40954c3c222,
         type: 3}
       propertyPath: m_Name
-      value: Jumppadgeo3
+      value: JumpPadYellow
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 911ab5fb3bbe2e743855f40954c3c222,
         type: 3}
@@ -1671,6 +1680,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 608069085}
+  red: {fileID: 1150015431}
+  yellow: {fileID: 1677982946}
+  blue: {fileID: 421555317}
 --- !u!65 &1677982950
 BoxCollider:
   m_ObjectHideFlags: 0
