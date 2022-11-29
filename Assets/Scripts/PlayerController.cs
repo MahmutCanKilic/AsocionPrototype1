@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float playerSpeed = 500;
     public bool jumpPad;
     bool onAir;
+    [SerializeField] private Animator jumpPadAnimator;
     void Start()
     {
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody>();
         xMargin = 3;
+
     }
 
 
@@ -65,13 +67,13 @@ public class PlayerController : MonoBehaviour
         //Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction, 12 * Time.deltaTime,0);
         //transform.rotation = Quaternion.LookRotation(newDirection);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("JumpPad"))
-        {
-            rb.AddForce(Vector3.up * 15, ForceMode.VelocityChange);
-
-            Debug.Log("Jump");
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("JumpPad"))
+    //    {
+    //        rb.AddForce(Vector3.up * 15, ForceMode.VelocityChange);
+    //        jumpPadAnimator.SetTrigger("CollisionRed");
+    //        Debug.Log("Jump");
+    //    }
+    //}
 }
