@@ -5,8 +5,8 @@ using UnityEngine;
 public class InteractionObjects : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] private GameObject player , red ,yellow, blue;
     Animator anim;
+   
     //[SerializeField] private GameObject red, yellow, blue;
     // Start is called before the first frame update
     void Start()
@@ -17,18 +17,23 @@ public class InteractionObjects : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Red"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            anim.SetTrigger("CollisionRed");
+            if (gameObject.CompareTag("Red"))
+            {
+                anim.SetTrigger("CollisionRed");
+            }
+            if (gameObject.CompareTag("Blue"))
+            {
+                anim.SetTrigger("CollisionBlue");
+            }
+            if (gameObject.CompareTag("Yellow"))
+            {
+                anim.SetTrigger("CollisionYellow");
+            }
         }
-        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Blue"))
-        {
-            anim.SetTrigger("CollisionBlue");
-        }
-        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Yellow"))
-        {
-            anim.SetTrigger("CollisionYellow");
-        }
+
+
     }
     private void OnTriggerExit(Collider other)
     {
