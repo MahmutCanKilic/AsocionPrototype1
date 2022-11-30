@@ -9,6 +9,8 @@ TagManager:
   - Red
   - Blue
   - Yellow
+  - StartPlane
+  - Plane
   layers:
   - Default
   - TransparentFX
