@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float playerSpeedX = 300;
     [SerializeField] private float playerSpeed = 500;
     public bool jumpPad;
-    bool onAir;
     [SerializeField] private Animator jumpPadAnimator;
+    public bool isAir;
     void Start()
     {
         mainCamera = Camera.main;
@@ -22,11 +22,26 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        bool onAir = FindObjectOfType<FuelManagement>().onAir;
         if (transform.position.y >= 11)
         {
-            onAir = true;
-            rb.constraints = RigidbodyConstraints.FreezePositionY;
-            rb.freezeRotation = true;
+            if (onAir)
+            {
+                isAir = true;
+                rb.constraints = RigidbodyConstraints.FreezePositionY;
+                rb.freezeRotation = true;
+            }
+            else
+            {
+                isAir = false;
+                rb.constraints = RigidbodyConstraints.None;
+                rb.freezeRotation = true;
+            }
+ 
+        }
+        else
+        {
+            isAir = false;
         }
         int xDir = 0;
         float angelY = transform.eulerAngles.y;
@@ -67,13 +82,4 @@ public class PlayerController : MonoBehaviour
         //Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction, 12 * Time.deltaTime,0);
         //transform.rotation = Quaternion.LookRotation(newDirection);
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("JumpPad"))
-    //    {
-    //        rb.AddForce(Vector3.up * 15, ForceMode.VelocityChange);
-    //        jumpPadAnimator.SetTrigger("CollisionRed");
-    //        Debug.Log("Jump");
-    //    }
-    //}
 }

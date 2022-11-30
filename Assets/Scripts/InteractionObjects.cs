@@ -6,15 +6,17 @@ public class InteractionObjects : MonoBehaviour
 {
     Rigidbody rb;
     Animator anim;
-   
-    //[SerializeField] private GameObject red, yellow, blue;
-    // Start is called before the first frame update
+    private bool onAir;
+
     void Start()
     {
         rb = GameObject.FindObjectOfType<PlayerController>().rb;
         anim = GetComponent<Animator>();
     }
-
+    private void Update()
+    {
+        onAir = FindObjectOfType<FuelManagement>().onAir;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -39,7 +41,15 @@ public class InteractionObjects : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            rb.AddForce(Vector3.up * 15, ForceMode.VelocityChange);
+            
+            if (onAir)
+            {
+                rb.AddForce(Vector3.up * 15, ForceMode.VelocityChange);
+            }
+            else
+            {
+                rb.AddForce(-Vector3.up * 15, ForceMode.VelocityChange);
+            }
         }
     }
 }
