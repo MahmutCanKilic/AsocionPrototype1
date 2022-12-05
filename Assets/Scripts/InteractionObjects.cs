@@ -7,11 +7,12 @@ public class InteractionObjects : MonoBehaviour
     Rigidbody rb;
     Animator anim;
     private bool onAir;
-
+    Animator playerAnimator;
     void Start()
     {
         rb = GameObject.FindObjectOfType<PlayerController>().rb;
         anim = GetComponent<Animator>();
+        playerAnimator = rb.gameObject.GetComponent<Animator>();
     }
     private void Update()
     {
@@ -45,10 +46,13 @@ public class InteractionObjects : MonoBehaviour
             if (onAir)
             {
                 rb.AddForce(Vector3.up * 15, ForceMode.VelocityChange);
+                //playerAnimator.SetBool("Air",true);
             }
             else
             {
+                
                 rb.AddForce(-Vector3.up * 15, ForceMode.VelocityChange);
+                
             }
         }
     }

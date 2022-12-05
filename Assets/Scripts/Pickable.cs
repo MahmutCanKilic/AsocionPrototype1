@@ -6,9 +6,15 @@ using UnityEngine.UI;
 public class Pickable : MonoBehaviour
 {
     private Image ımg;
+    int countFuel;
     private void Start()
     {
         ımg = FindObjectOfType<FuelManagement>().fuelBar;
+    }
+    private void Update()
+    {
+        countFuel = FindObjectOfType<SpawnManager>().countFuel;
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +22,7 @@ public class Pickable : MonoBehaviour
         {
             Destroy(gameObject);
             ımg.fillAmount += 0.1f;
+            
         }
     }
 }

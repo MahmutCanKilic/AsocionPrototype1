@@ -22,9 +22,12 @@ public class FuelManagement : MonoBehaviour
         {
             onAir = true;           
         }
+
+        
         if (fuelBar.fillAmount == 0)
         {
             onAir = false;
+            
         }
         if (isAir)
         {

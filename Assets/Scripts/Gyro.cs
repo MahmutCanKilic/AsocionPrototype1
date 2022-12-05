@@ -7,6 +7,7 @@ public class Gyro : MonoBehaviour
     private Rigidbody rb;
     private SimpleSpinBlur ssb;
     [SerializeField] private float rotateSpeed;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -19,6 +20,7 @@ public class Gyro : MonoBehaviour
         bool isAir = FindObjectOfType<PlayerController>().isAir;
         if (isAir)
         {
+            
             rotateSpeed = 2000;
             ssb.shutterSpeed = 37;
             ssb.Samples = 15;

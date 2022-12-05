@@ -11,17 +11,26 @@ public class PlayerController : MonoBehaviour
     public bool jumpPad;
     [SerializeField] private Animator jumpPadAnimator;
     public bool isAir;
+    Animator animPlayer;
     void Start()
     {
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody>();
         xMargin = 3;
-
+        animPlayer = GetComponent<Animator>();
     }
 
 
     void FixedUpdate()
     {
+        if (transform.position.y < 1)
+        {
+            animPlayer.SetBool("Air", false);
+        }
+        else
+        {
+            animPlayer.SetBool("Air", true);
+        }
         bool onAir = FindObjectOfType<FuelManagement>().onAir;
         if (transform.position.y >= 11)
         {
